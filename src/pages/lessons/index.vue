@@ -2,8 +2,8 @@
   <div>
     <div class="lessons-header">课程列表</div>
     <ul class="lessons">
-      <li v-for="lesson in lessons" v-bind:key="lesson.ID" class="lesson-item">
-        <img :src="lesson.ImageUrl" :alt="lesson.LessonName">
+      <li v-for="lesson in lessons" v-bind:key="lesson.ID" class="lesson-item" @click="goInLesson(lesson.ID)">
+        <img class="less-image" :src="lesson.ImageUrl" :alt="lesson.LessonName">
         <span>{{lesson.LessonName}}</span>
       </li>
     </ul>
@@ -13,15 +13,24 @@
 import { Http } from '../../utils/httpTool'
 
 export default {
-  data() {
+  data () {
     return {
       lessons: []
     }
   },
-  created() {
-    Http.get('getLessons').then((resp)=> {
-      this.lessons = resp.data.lessons
-    }, (err)=> {})
+  created () {
+    Http.get('getLessons', null, (resp) => {
+      this.lessons = resp.data
+    }, (err) => {
+      console.log(err)
+    })
+  },
+  methods: {
+    goInLesson (lessId) {
+      wx.navigateTo({
+        url: '/pages/lessonknows/main'
+      })
+    }
   }
 }
 </script>
@@ -34,6 +43,10 @@ export default {
 }
 .lesson-item {
 
+}
+.less-image {
+  width: 320rpx;
+  height: 240rpx;
 }
 </style>
 

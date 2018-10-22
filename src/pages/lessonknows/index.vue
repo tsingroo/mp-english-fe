@@ -1,22 +1,22 @@
 <template>
-  <div></div>
+  <div>
+    Knowledge Page
+  </div>
 </template>
 <script>
 import { Http } from '../../utils/httpTool'
 
 export default {
-  data() {
+  data () {
     return {
       knows: []
     }
   },
-  created() {
-    Http.get('getKnowledges').then((resp) => {
-      this.knows = resp.data.knows
-    }, (err) => {})
+  created () {
+    Http.get('getKnowledges')
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

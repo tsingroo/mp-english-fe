@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/lessons/main",
-    "pages/index/main"
+    "pages/lessonknows/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
