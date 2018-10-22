@@ -4,7 +4,7 @@ export const apiConfig = {
     'production': ''
   },
   'getKnowledges': {
-    'development': 'http://www.xingyunzhuji.cn/lesson',
+    'development': 'http://www.xingyunzhuji.cn/lessonknowledge',
     'production': ''
   }
 }

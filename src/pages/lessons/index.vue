@@ -28,7 +28,7 @@ export default {
   methods: {
     goInLesson (lessId) {
       wx.navigateTo({
-        url: '/pages/lessonknows/main'
+        url: '/pages/lessonknows/main?lessId=' + lessId
       })
     }
   }

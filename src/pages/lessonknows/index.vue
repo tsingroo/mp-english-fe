@@ -1,6 +1,9 @@
 <template>
   <div>
-    Knowledge Page
+    <li v-for="knowledge in knows" v-bind:key="knowledge.ID" @click="playAudio(knowledge.Word)">
+      <img :src="knowledge.ImageURL">
+      <span>{{knowledge.Word}}</span>
+    </li>
   </div>
 </template>
 <script>
@@ -12,8 +15,27 @@ export default {
       knows: []
     }
   },
-  created () {
-    Http.get('getKnowledges')
+  onLoad (options) {
+    console.log(options)
+    Http.get('getKnowledges', {
+      lesson_id: options.lessId
+    }, (resp) => {
+      this.knows = resp.data
+    }, (err) => {
+      console.log(err)
+    })
+  },
+  methods: {
+    playAudio (word) {
+      const ydVoiceUrl = `http://dict.youdao.com/dictvoice?audio=${word}`
+      console.log(ydVoiceUrl)
+      wx.playBackgroundAudio({
+        dataUrl: ydVoiceUrl,
+        complete () {
+          console.log('done')
+        }
+      })
+    }
   }
 }
 </script>
