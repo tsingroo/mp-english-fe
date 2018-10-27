@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/main",
     "pages/lessons/main",
     "pages/lessonknows/main"
   ],
