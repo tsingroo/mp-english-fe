@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/main",
     "pages/lessons/main",
-    "pages/lessonknows/main"
+    "pages/lessonknows/main",
+    "pages/subjects/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
