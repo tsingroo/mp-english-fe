@@ -1,14 +1,27 @@
-import Axios from 'axios'
 import { apiConfig } from '../api.config'
 
 export class Http {
-  static get(url, params, withCredential = false) {
+  static get (url, params, successCb, errorCb) {
     const reqUrl = apiConfig[url][process.env.NODE_ENV]
-    return Axios.get(reqUrl, params, withCredential)
+    const reqObj = {
+      url: reqUrl,
+      data: params,
+      method: 'GET',
+      success: successCb,
+      fail: errorCb
+    }
+    wx.request(reqObj)
   }
 
-  static post(url, params, withCredential = false) {
+  static post (url, params, successCb, errorCb) {
     const reqUrl = apiConfig[url][process.env.NODE_ENV]
-    return Axios.post(reqUrl, params, withCredential)
+    const reqObj = {
+      reqUrl,
+      params,
+      method: 'POST',
+      success: successCb,
+      fail: errorCb
+    }
+    wx.request(reqObj)
   }
 }

@@ -1,12 +1,15 @@
 {
   "pages": [
+    "pages/index/main",
     "pages/lessons/main",
-    "pages/index/main"
+    "pages/lessonknows/main",
+    "pages/subjects/main",
+    "pages/subjectknowledges/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Phonics 自然拼读",
     "navigationBarTextStyle": "black"
   }
 }

@@ -1,92 +1,77 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
-
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
-      </div>
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
-  </div>
-</template>
-
-<script>
-import card from '@/components/card'
-
-export default {
-  data () {
-    return {
-      motto: 'Hello World',
-      userInfo: {}
-    }
-  },
-
-  components: {
-    card
-  },
-
-  methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      wx.navigateTo({ url })
-    },
-    clickHandle (msg, ev) {
-      console.log('clickHandle:', msg, ev)
-    }
-  },
-
-  created () {
+ <div>
+    <swiper id="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+      <swiper-item>
+        <image @click="gotoPhonics()" mode="scaleToFill" src="http://ph1cnfby2.bkt.clouddn.com/18-10-27/34630639.jpg" style="width: 100%;height: 168px;"/>
+      </swiper-item>
+      <swiper-item>
+        <image @click="gotoSubjects()" mode="scaleToFill" src="http://ph1cnfby2.bkt.clouddn.com/18-10-27/36305421.jpg" style="width: 100%;height: 168px;"/>
+      </swiper-item>
+    </swiper>
+    <br><br><br>
     
+    <div id="main_module" style="display:flex;flex-direction: row;">
+      <div class="main-item" @click="gotoPhonics()">
+        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/2849001.jpg" style="width:200rpx;height:200rpx;"/>
+      </div>
+      <div class="main-item" @click="gotoSubjects()">
+        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/17007276.jpg" style="width:200rpx;height:200rpx;"/>
+      </div>
+      <div class="main-item">
+        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/20524568.jpg" style="width:200rpx;height:200rpx;"/>
+      </div>
+    </div>
+    <br><br>
+
+    <div>
+      <ul class="newslist">
+        <li class="news-item">
+          * 2019.01月.第四版，未排期，广大用户可向Shirley妈妈或者Shirley爸爸提建议
+        </li>
+        <li class="news-item">
+          * 2018.12月.预计发布第三版，加入手势写字，机器智能识别功能
+        </li>
+        <li class="news-item">
+          * 2018.11月.预计发布第二版，加入新的主题课模块
+        </li>
+      </ul>
+    </div>
+ </div>
+</template>
+<script>
+export default {
+  onShareAppMessage () {
+    return {
+      title: '快来跟我一起学习英语吧！',
+      path: 'pages/index/main'
+    }
+  },
+  methods: {
+    gotoPhonics () {
+      wx.navigateTo({
+        url: '/pages/lessons/main'
+      })
+    },
+    gotoSubjects () {
+      wx.navigateTo({
+        url: '/pages/subjects/main'
+      })
+    }
   }
 }
 </script>
-
 <style scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.main-item {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 30rpx 25rpx 30rpx 25rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.newslist {
+  margin: 30rpx 0 0 30rpx;
 }
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-
-.counter {
-  display: inline-block;
-  margin: 10px auto;
-  padding: 5px 10px;
-  color: blue;
-  border: 1px solid blue;
+.news-item {
+  margin-bottom: 10rpx;
+  font-size:32rpx;
+  color: #222;
 }
 </style>
