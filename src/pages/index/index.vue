@@ -12,13 +12,13 @@
     
     <div id="main_module" style="display:flex;flex-direction: row;">
       <div class="main-item" @click="gotoPhonics()">
-        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-27/85472759.jpg" style="width:200rpx;height:200rpx;"/>
+        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/2849001.jpg" style="width:200rpx;height:200rpx;"/>
       </div>
       <div class="main-item" @click="gotoSubjects()">
-        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-27/50769816.jpg" style="width:200rpx;height:200rpx;"/>
+        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/17007276.jpg" style="width:200rpx;height:200rpx;"/>
       </div>
       <div class="main-item">
-        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-27/80547463.jpg" style="width:200rpx;height:200rpx;"/>
+        <image mode="aspectFit" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/20524568.jpg" style="width:200rpx;height:200rpx;"/>
       </div>
     </div>
     <br><br>
@@ -40,6 +40,12 @@
 </template>
 <script>
 export default {
+  onShareAppMessage () {
+    return {
+      title: '快来跟我一起学习英语吧！',
+      path: 'pages/index/main'
+    }
+  },
   methods: {
     gotoPhonics () {
       wx.navigateTo({

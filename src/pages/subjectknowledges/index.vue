@@ -28,7 +28,8 @@ export default {
     })
   },
   methods: {
-    play (sentence) {
+    play (sen) {
+      const sentence = encodeURIComponent(sen)
       const ydVoiceUrl = `http://dict.youdao.com/dictvoice?audio=${sentence}`
       wx.playBackgroundAudio({
         dataUrl: ydVoiceUrl,
