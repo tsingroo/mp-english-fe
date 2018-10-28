@@ -3,7 +3,7 @@
     <div>主题课</div>
     <ul>
       <li v-for="subject in subjects" :key="subject.ID" @click="gotoSubjectKnowledge(subject.ID)">
-        <img :src="subject.ImageURL">
+        <image mode="aspectFit" class="sub-image" :src="subject.ImageURL" />
       </li>
     </ul>
   </div>
@@ -34,5 +34,9 @@ export default {
 }
 </script>
 <style scoped>
-
+.sub-image {
+  width: 650rpx;
+  height: 420rpx;
+  margin: 5rpx 50rpx;
+}
 </style>

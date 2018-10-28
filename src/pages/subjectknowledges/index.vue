@@ -1,10 +1,17 @@
 <template>
   <div>
     <ul>
-      <li v-for="know in subKnows" :key="know.ID">
-        <img :src="know.ImageURL">
-        <div @click="play(know.Question)">Q: {{know.Question}}</div>
-        <div @click="play(know.Answer)">A: {{know.Answer}}</div>
+      <div v-if="subKnows == null || subKnows.length == 0">
+        暂无内容，请查看其他主题，待数据录入后可正常使用
+      </div>
+      <li v-if="subKnows.length != 0" v-for="know in subKnows" :key="know.ID">
+        <image mode="aspectFit" class="subknow-image" :src="know.ImageURL" />
+        <div @click="play(know.Question)" class="sub-know-q">
+          <image mode="aspectFit" class="voice-ico" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/1470754.jpg" />Q: {{know.Question}}?
+        </div>
+        <div @click="play(know.Answer)" class="sub-know-a">
+          <image mode="aspectFit" class="voice-ico" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/1470754.jpg" />A: {{know.Answer}}.
+        </div>
       </li>
     </ul>
   </div>
@@ -41,5 +48,19 @@ export default {
 }
 </script>
 <style scoped>
-
+.subknow-image {
+  width: 400rpx;
+  height: 400rpx;
+  margin: 50rpx 175rpx 0 175rpx;
+}
+.voice-ico {
+  width: 46rpx;
+  height: 46rpx;
+  vertical-align: middle;
+  margin: 5rpx;
+}
+.sub-know-q, .sub-know-a {
+  font-size: 50rpx;
+  margin-left: 30rpx;
+}
 </style>
