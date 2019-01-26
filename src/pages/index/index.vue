@@ -23,7 +23,7 @@
     </div>
     <br><br>
 
-    <div>
+    <!-- <div>
       <ul class="newslist">
         <li class="news-item">
           * 2019.01月.第四版，未排期，广大用户可向Shirley妈妈或者Shirley爸爸提建议
@@ -35,7 +35,7 @@
           * 2018.11月.预计发布第二版，加入新的主题课模块
         </li>
       </ul>
-    </div>
+    </div> -->
  </div>
 </template>
 <script>
