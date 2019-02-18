@@ -7,10 +7,10 @@
       <li v-if="subKnows.length != 0" v-for="know in subKnows" :key="know.ID">
         <image mode="aspectFit" class="subknow-image" :src="know.ImageURL" />
         <div @click="play(know.Question)" class="sub-know-q">
-          <image mode="aspectFit" class="voice-ico" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/1470754.jpg" />Q: {{know.Question}}?
+          <image mode="aspectFit" class="voice-ico" src="http://img.cdn.xingyunzhuji.cn/18-10-28/1470754.jpg" />Q: {{know.Question}}?
         </div>
         <div @click="play(know.Answer)" class="sub-know-a">
-          <image mode="aspectFit" class="voice-ico" src="http://ph1cnfby2.bkt.clouddn.com/18-10-28/1470754.jpg" />A: {{know.Answer}}.
+          <image mode="aspectFit" class="voice-ico" src="http://img.cdn.xingyunzhuji.cn/18-10-28/1470754.jpg" />A: {{know.Answer}}.
         </div>
       </li>
     </ul>
