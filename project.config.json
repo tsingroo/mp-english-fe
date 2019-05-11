@@ -11,6 +11,7 @@
 	"compileType": "miniprogram",
 	"appid": "wxa456ecdaf23b2393",
 	"projectname": "mp-english-fe",
+	"libVersion": "2.6.6",
 	"condition": {
 		"search": {
 			"current": -1,

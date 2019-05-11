@@ -17,25 +17,19 @@
       <div class="main-item" @click="gotoSubjects()">
         <image mode="aspectFit" src="http://img.cdn.xingyunzhuji.cn/18-10-28/17007276.jpg" style="width:200rpx;height:200rpx;"/>
       </div>
-      <div class="main-item">
-        <image mode="aspectFit" src="http://img.cdn.xingyunzhuji.cn/18-10-28/20524568.jpg" style="width:200rpx;height:200rpx;"/>
+      <div class="main-item" @click="gotoCustome()">
+        <div style="">自定义</div>
       </div>
     </div>
     <br><br>
 
-    <!-- <div>
+    <div>
       <ul class="newslist">
         <li class="news-item">
-          * 2019.01月.第四版，未排期，广大用户可向Shirley妈妈或者Shirley爸爸提建议
-        </li>
-        <li class="news-item">
-          * 2018.12月.预计发布第三版，加入手势写字，机器智能识别功能
-        </li>
-        <li class="news-item">
-          * 2018.11月.预计发布第二版，加入新的主题课模块
+          * 2019.05.更新点击自定义，在页面中输入句子，点击play即可播放😀
         </li>
       </ul>
-    </div> -->
+    </div>
  </div>
 </template>
 <script>
@@ -56,15 +50,27 @@ export default {
       wx.navigateTo({
         url: '/pages/subjects/main'
       })
+    },
+    gotoCustome () {
+      wx.navigateTo({
+        url: '/pages/custome/main'
+      })
     }
   }
 }
 </script>
 <style scoped>
+#main_module {
+  display: flex;
+  justify-content: space-around;
+}
+
 .main-item {
   width: 200rpx;
   height: 200rpx;
-  margin: 30rpx 25rpx 30rpx 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .newslist {
   margin: 30rpx 0 0 30rpx;

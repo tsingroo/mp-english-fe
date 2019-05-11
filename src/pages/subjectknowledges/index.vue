@@ -4,15 +4,17 @@
       <div v-if="subKnows == null || subKnows.length == 0">
         暂无内容，请查看其他主题，待数据录入后可正常使用
       </div>
-      <li v-if="subKnows.length != 0" v-for="know in subKnows" :key="know.ID">
-        <image mode="aspectFit" class="subknow-image" :src="know.ImageURL" />
-        <div @click="play(know.Question)" class="sub-know-q">
-          <image mode="aspectFit" class="voice-ico" src="http://img.cdn.xingyunzhuji.cn/18-10-28/1470754.jpg" />Q: {{know.Question}}?
-        </div>
-        <div @click="play(know.Answer)" class="sub-know-a">
-          <image mode="aspectFit" class="voice-ico" src="http://img.cdn.xingyunzhuji.cn/18-10-28/1470754.jpg" />A: {{know.Answer}}.
-        </div>
-      </li>
+      <div v-if="subKnows.length != 0">
+        <li v-for="know in subKnows" :key="know.ID">
+          <image mode="aspectFit" class="subknow-image" :src="know.ImageURL" />
+          <div @click="play(know.Question)" class="sub-know-q">
+            <image mode="aspectFit" class="voice-ico" src="http://img.cdn.xingyunzhuji.cn/18-10-28/1470754.jpg" />Q: {{know.Question}}?
+          </div>
+          <div @click="play(know.Answer)" class="sub-know-a">
+            <image mode="aspectFit" class="voice-ico" src="http://img.cdn.xingyunzhuji.cn/18-10-28/1470754.jpg" />A: {{know.Answer}}.
+          </div>
+        </li>
+      </div>
     </ul>
   </div>
 </template>

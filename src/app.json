@@ -4,12 +4,19 @@
     "pages/lessons/main",
     "pages/lessonknows/main",
     "pages/subjects/main",
-    "pages/subjectknowledges/main"
+    "pages/subjectknowledges/main",
+    "pages/custome/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Phonics 自然拼读",
     "navigationBarTextStyle": "black"
+  },
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.3.0",
+      "provider": "wxa75efa648b60994b"
+    }
   }
 }
